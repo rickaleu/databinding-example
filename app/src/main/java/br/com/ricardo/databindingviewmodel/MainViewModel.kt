@@ -21,4 +21,9 @@ class MainViewModel : ViewModel() {
         _counter.value = (++number).toString()
     }
 
+    fun resetMe() {
+        number = 0
+        _counter.value = number.toString()
+    }
+
 }
