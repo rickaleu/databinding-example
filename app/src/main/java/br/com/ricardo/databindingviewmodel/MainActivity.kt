@@ -9,10 +9,12 @@ import br.com.ricardo.databindingviewmodel.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private val viewModel : MainViewModel by viewModels()
+    private val binding: ActivityMainBinding by lazy {
+        DataBindingUtil.setContentView(this, R.layout.activity_main)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         binding.viewmodel = viewModel
         binding.lifecycleOwner = this
